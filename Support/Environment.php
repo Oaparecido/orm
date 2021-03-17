@@ -2,7 +2,7 @@
 
 namespace Support;
 
-trait config
+trait Environment
 {
     public function env($get, $default = '')
     {

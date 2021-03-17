@@ -4,7 +4,7 @@ namespace Model;
 
 use Exception;
 use PDO;
-use Support\config;
+use Support\Environment;
 
 class Model
 {
@@ -18,9 +18,9 @@ class Model
 
     protected string $table = '';
     protected array $fields = [];
-    private PDO $pdo;
+    private static PDO $pdo;
 
-    use config;
+    use Environment;
 
     /**
      * Model constructor.
@@ -28,7 +28,7 @@ class Model
      */
     public function __construct()
     {
-        $this->pdo = new PDO($this->env('DB_CONNECTION', 'mysql') . ":host=" . $this->env('DB_HOST') . ";dbname=" . $this->env('DB_DATABASE') . ";port=" . $this->env('DB_PORT'), $this->env('DB_USERNAME'), $this->env('DB_PASSWORD'));
+        self::$pdo = new PDO($this->env('DB_CONNECTION', 'mysql') . ":host=" . $this->env('DB_HOST') . ";dbname=" . $this->env('DB_DATABASE') . ";port=" . $this->env('DB_PORT'), $this->env('DB_USERNAME'), $this->env('DB_PASSWORD'));
         $this->create();
     }
 
@@ -39,13 +39,13 @@ class Model
     {
         $sql = "CREATE TABLE IF NOT EXISTS $this->table (";
 
-        foreach ($this->fields as $field => $type)
-            $sql .= "$field $type, ";
+        foreach ($this->fields as $field => $roles)
+            $sql .= "$field $roles, ";
 
-        $sql .= "id integer primary key auto_increment)";
+        $sql .= "terminalsid integer primary key auto_increment)";
 
         try {
-            $this->pdo->exec($sql);
+            self::$pdo->exec($sql);
         } catch (Exception $exception) {
             throw new Exception($exception->getMessage(), $exception->getCode());
         }
