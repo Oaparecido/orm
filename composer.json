@@ -8,10 +8,13 @@
             "email": "daniel.aparecido4683@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "ext-pdo": "*"
+    },
     "autoload": {
         "psr-4": {
-            "Model": "bootstrap/model"
+            "Model\\": "./bootstrap/model",
+            "Support\\": "./Support"
         }
     }
 
