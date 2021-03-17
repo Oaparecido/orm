@@ -11,7 +11,8 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Model": "bootstrap/model"
+            "Model\\": "./bootstrap/model",
+            "Support\\": "./Support"
         }
     }
 
