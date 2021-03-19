@@ -13,6 +13,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Tests\\": "./tests",
             "Model\\": "./bootstrap/model",
             "Support\\": "./Support"
         }
