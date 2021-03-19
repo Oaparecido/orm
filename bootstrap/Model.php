@@ -1,6 +1,6 @@
 <?php
 
-namespace Bootstrap\Model;
+namespace Bootstrap;
 
 use Exception;
 use PDO;
