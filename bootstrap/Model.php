@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace Bootstrap\Model;
 
 use Exception;
 use PDO;
@@ -28,6 +28,7 @@ class Model
      */
     public function __construct()
     {
+        $this->load(__DIR__ . '/../.env');
         self::$pdo = new PDO($this->env('DB_CONNECTION', 'mysql') . ":host=" . $this->env('DB_HOST') . ";dbname=" . $this->env('DB_DATABASE') . ";port=" . $this->env('DB_PORT'), $this->env('DB_USERNAME'), $this->env('DB_PASSWORD'));
         $this->create();
     }
@@ -42,7 +43,7 @@ class Model
         foreach ($this->fields as $field => $roles)
             $sql .= "$field $roles, ";
 
-        $sql .= "terminalsid integer primary key auto_increment)";
+        $sql .= "id integer primary key auto_increment)";
 
         try {
             self::$pdo->exec($sql);
