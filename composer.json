@@ -13,9 +13,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Model\\": "./bootstrap/model",
+            "Bootstrap\\Model\\": "./bootstrap",
             "Support\\": "./Support"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
-
 }
