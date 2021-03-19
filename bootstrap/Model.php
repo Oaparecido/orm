@@ -1,6 +1,6 @@
 <?php
 
-namespace Bootstrap\Model;
+namespace Bootstrap;
 
 use Exception;
 use PDO;
@@ -9,15 +9,20 @@ use Support\Environment;
 class Model
 {
     /**
-     * Create Model class to basic functions.
-     *  [OK] create table
-     *  [] drop table
-     *  [] find
-     *  [] remove field
+     * Name for table in DB
+     * @var string
      */
+    protected string $table;
 
-    protected string $table = '';
-    protected array $fields = [];
+    /**
+     * Fields to save into table
+     * @var array
+     */
+    protected array $fields;
+
+    /**
+     * @var PDO
+     */
     private static PDO $pdo;
 
     use Environment;

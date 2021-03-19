@@ -9,5 +9,8 @@
         <testsuite name="environment">
             <file>./tests/Unit/EnvironmentTest.php</file>
         </testsuite>
+        <testsuite name="user">
+            <file>./tests/Unit/UserTest.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>
