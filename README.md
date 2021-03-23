@@ -27,3 +27,10 @@ With that installed just run the following command.
     $model = new Model();
     $values = $model->where('$exp', '$value');
 ```
+
+
+## 🚀 In the Project 🚀
+📌 This library, will build tables and queries for usage in projects future
+📌 This library use test with PHPUnit, and is totally independent.
+
+## 🍻 Thanks for read! 🍻
