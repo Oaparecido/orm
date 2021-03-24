@@ -17,5 +17,6 @@ class UserTest extends TestCase
         $user = new User();
 
         $this->assertTrue($user->test());
+        $user->name = 'daniel';
     }
 }
