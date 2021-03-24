@@ -1,12 +1,15 @@
 <?php
 
-namespace Orm\Config;
+namespace Orm\DB;
 
 use Support\Environment;
 
 trait config
 {
-    use Environment;
+    public function __construct()
+    {
+        Environment::load(__DIR__ . '/../.env');
+    }
 
     /**
      * @return array[]
@@ -15,11 +18,11 @@ trait config
     {
         return [
             'mysql' => [
-                'host'     => $this->env('DB_HOST', 'localhost'),
-                'port'     => $this->env('DB_PORT', '3306'),
-                'database' => $this->env('DB_DATABASE', 'default'),
-                'username' => $this->env('DB_USERNAME', 'root'),
-                'password' => $this->env('DB_PASSWORD', 'root'),
+                'host'     => Environment::get('DB_HOST', 'localhost'),
+                'port'     => Environment::get('DB_PORT', '3306'),
+                'database' => Environment::get('DB_DATABASE', 'default'),
+                'username' => Environment::get('DB_USERNAME', 'root'),
+                'password' => Environment::get('DB_PASSWORD', 'root'),
             ]
         ];
     }
