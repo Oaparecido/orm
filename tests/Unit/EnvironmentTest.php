@@ -23,11 +23,11 @@ class EnvironmentTest extends TestCase
      */
     public function make()
     {
-        $this->assertEquals('mysql', $this->env('DB_CONNECTION'));
-        $this->assertEquals(3306, $this->env('DB_PORT'));
-        $this->assertEquals('database', $this->env('DB_HOST'));
-        $this->assertEquals('local', $this->env('DB_DATABASE'));
-        $this->assertEquals('root', $this->env('DB_USERNAME'));
-        $this->assertEquals('root', $this->env('DB_PASSWORD'));
+        $this->assertEquals('mysql', $this->get('DB_CONNECTION'));
+        $this->assertEquals(3306, $this->get('DB_PORT'));
+        $this->assertEquals('database', $this->get('DB_HOST'));
+        $this->assertEquals('local', $this->get('DB_DATABASE'));
+        $this->assertEquals('root', $this->get('DB_USERNAME'));
+        $this->assertEquals('root', $this->get('DB_PASSWORD'));
     }
 }
