@@ -12,5 +12,8 @@
         <testsuite name="user">
             <file>./tests/Unit/UserTest.php</file>
         </testsuite>
+        <testsuite name="connection">
+            <file>./tests/Unit/database/ConnectionTest.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>

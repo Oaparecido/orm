@@ -16,7 +16,8 @@
             "Tests\\": "./tests",
             "Bootstrap\\": "./bootstrap",
             "Models\\": "./app/Models",
-            "Support\\": "./Support"
+            "Support\\": "./Support",
+            "Orm\\DB\\": "./database"
         }
     },
     "require-dev": {
